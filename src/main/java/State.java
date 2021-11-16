@@ -3,4 +3,5 @@ public interface State {
     public void demarre(LightManager lightManager);
     public void arrete(LightManager lightManager);
     public void eteint(LightManager lightManager);
+    public void showState();
 }

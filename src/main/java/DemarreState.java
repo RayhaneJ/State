@@ -24,4 +24,9 @@ public class DemarreState implements State{
     public void eteint(LightManager lightManager) {
         System.out.println("Impossible d'eteindre");
     }
+
+    @Override
+    public void showState() {
+        System.out.println("Demarre");
+    }
 }

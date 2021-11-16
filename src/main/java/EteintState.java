@@ -25,4 +25,9 @@ public class EteintState implements State {
     public void eteint(LightManager lightManager) {
         System.out.println("Deja eteint");
     }
+
+    @Override
+    public void showState() {
+        System.out.println("Eteint");
+    }
 }

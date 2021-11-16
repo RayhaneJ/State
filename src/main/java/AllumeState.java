@@ -26,5 +26,10 @@ public class AllumeState implements State{
         lightManager.setState(EteintState.getInstance());
     }
 
+    @Override
+    public void showState() {
+        System.out.println("Allume");
+    }
+
 
 }

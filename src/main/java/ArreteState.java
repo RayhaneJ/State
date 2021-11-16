@@ -26,4 +26,9 @@ public class ArreteState implements State {
         System.out.println("Eteint");
         lightManager.setState(EteintState.getInstance());
     }
+
+    @Override
+    public void showState() {
+        System.out.println("Arrete");
+    }
 }

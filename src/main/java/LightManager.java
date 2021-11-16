@@ -2,7 +2,7 @@ public class LightManager {
     private State state;
 
     public LightManager(){
-        state = null;
+        state = new EteintState();
     }
 
     public void setState(State state){
