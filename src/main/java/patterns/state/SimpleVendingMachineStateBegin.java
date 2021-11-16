@@ -2,7 +2,6 @@ package patterns.state;
 
 public class SimpleVendingMachineStateBegin extends SimpleVendingMachineState {
     private static SimpleVendingMachineState instance = new SimpleVendingMachineStateBegin();
-    private int cash;
 
     public static SimpleVendingMachineState getInstance(){
         return instance;
@@ -10,27 +9,17 @@ public class SimpleVendingMachineStateBegin extends SimpleVendingMachineState {
 
     @Override
     public void give(SimpleVendingMachineContext c, int money) {
-        cash += money;
+        if(money >= 10)
+            c.setState(SimpleVendingMachineStateChoice.getInstance());
     }
 
     @Override
-    public void askCoffee(SimpleVendingMachineContext c){
-        if(cash >= 10) {
-            cash = 0;
-            System.out.println("One Coffee");
-        }
-        else
-            System.out.println("Pas possible");
+    public void askCoffee(SimpleVendingMachineContext c) throws IncorrectStateException {
+        throw new IncorrectStateException("Cant ask coffee in this state");
     }
 
     @Override
-    public void askTea(SimpleVendingMachineContext c) {
-        if(cash >= 10) {
-            cash = 0;
-            System.out.println("One tea");
-        }
-        else {
-            System.out.println("Pas possible");
-        }
+    public void askTea(SimpleVendingMachineContext c) throws IncorrectStateException {
+        throw new IncorrectStateException("Cant ask the in this state");
     }
 }

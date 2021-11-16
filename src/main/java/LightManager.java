@@ -5,8 +5,8 @@ public class LightManager {
         state = new EteintState();
     }
 
-    public void setState(State state){
-        state = state;
+    public void setState(State providedState){
+        state = providedState;
     }
 
     public State getState(){
@@ -28,4 +28,6 @@ public class LightManager {
     public void eteitn(){
         state.eteint(this);
     }
+
+    public void show() { state.showState(); }
 }

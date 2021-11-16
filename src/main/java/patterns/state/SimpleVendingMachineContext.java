@@ -20,7 +20,6 @@ public class SimpleVendingMachineContext {
 
     public void give(int money) throws IncorrectStateException {
         current.give(this, money);
-
     }
 
     public void askCoffee() throws IncorrectStateException {
