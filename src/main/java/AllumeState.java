@@ -1,4 +1,10 @@
 public class AllumeState implements State{
+    private static AllumeState instance = new AllumeState();
+
+    public static AllumeState getInstance() {
+        return instance;
+    }
+
     @Override
     public void allume(LightManager lightManager) {
         System.out.println("Deja allume");
@@ -6,7 +12,7 @@ public class AllumeState implements State{
 
     @Override
     public void demarre(LightManager lightManager) {
-            lightManager.setState(new DemarreState());
+            lightManager.setState(AllumeState.getInstance());
     }
 
     @Override
@@ -17,7 +23,7 @@ public class AllumeState implements State{
     @Override
     public void eteint(LightManager lightManager) {
         System.out.println("Eteint");
-        lightManager.setState(new EteintState());
+        lightManager.setState(EteintState.getInstance());
     }
 
 

@@ -1,8 +1,14 @@
 public class EteintState implements State {
+    private static EteintState instance = new EteintState();
+
+    public static EteintState getInstance() {
+        return instance;
+    }
+
     @Override
     public void allume(LightManager lightManager) {
         System.out.println("Allume");
-        lightManager.setState(new AllumeState());
+        lightManager.setState(AllumeState.getInstance());
     }
 
     @Override
